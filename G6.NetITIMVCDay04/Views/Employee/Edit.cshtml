@@ -1,0 +1,61 @@
+﻿@model Employee
+
+<div class="d-flex justify-content-center">
+    <h2>Edit Employee</h2>
+</div>
+
+<br />
+<br />
+<br />
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group mt-5">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-5">
+        <label asp-for="Age" class="form-label"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-5">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-5">
+        <label asp-for="Address" class="form-label"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-5">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-5">
+        <label asp-for="DepartmentId" class="form-label"></label>
+        <select asp-items="ViewBag._Departments" asp-for="DepartmentId" class="form-control">
+        </select>
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-5 d-flex justify-content-center">
+        <input type="submit" value="Edit Employee" class="btn btn-success mx-3" />
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-secondary mx-3">Back</a>
+    </div>
+
+</form>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
